@@ -5,36 +5,41 @@ function removeActiv() {
       imgs[i].classList.remove("activ")
    }
 }
+export function cardTip(n) {
+   let number = n.slice(0, 3)
 
-input.oninput = function () {
-   removeActiv();
-   let number = input.value.slice(0, 3)
-   console.log(number)
    if (number[0] === "4") {
-      document.getElementById("1").classList.add("activ")
-
+      return "1"
    }
    if (number[0] === "5") {
-      document.getElementById("2").classList.add("activ")
+      return "2"
 
    }
    if (number === "371") {
-      document.getElementById("3").classList.add("activ")
+      return "3"
    }
    if (number[0] === "6") {
-      document.getElementById("4").classList.add("activ")
+      return "4"
    }
    if (number === "353") {
-      document.getElementById("5").classList.add("activ")
+      return "5"
    }
    if (number === "305") {
-      document.getElementById("6").classList.add("activ")
+      return "6"
    }
    if (number[0] === "2") {
-      document.getElementById("7").classList.add("activ")
+      return "7"
    }
+   return 0
 }
-function isValid(cardNumber) {
+
+input.addEventListener("input", function () {
+   removeActiv();
+   document.getElementById(cardTip(input.value)).classList.add("activ")
+
+})
+
+export function isValid(cardNumber) {
    var arr = [],
       card_number = cardNumber.toString();
    for (var i = 0; i < card_number.length; i++) {
@@ -56,11 +61,11 @@ function isValid(cardNumber) {
 }
 
 let button = document.querySelector(".button")
-button.onclick = function () {
+button.addEventListener("click", function () {
    let e = isValid(input.value)
    if (e) {
       alert("Ваша карта валидна")
    } else {
       alert("Ваша карта не валидна")
    }
-}
+})
