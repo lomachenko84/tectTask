@@ -30,15 +30,16 @@ export function cardTip(n) {
    if (number[0] === "2") {
       return "7"
    }
-   return 0
+   return "0"
+
 }
 
-window.onload=function(){
+window.onload = function () {
    input.addEventListener("input", function () {
       removeActiv();
       document.getElementById(cardTip(input.value)).classList.add("activ")
 
-})
+   })
 }
 export function isValid(cardNumber) {
    var arr = [],
@@ -61,14 +62,14 @@ export function isValid(cardNumber) {
 
 }
 
-window.onload=function(){
-let button = document.querySelector(".button")
-button.addEventListener("click", function () {
+window.onload = function () {
+   let button = document.querySelector(".button")
+   button.addEventListener("click", function () {
       let e = isValid(input.value)
       if (e) {
          alert("Ваша карта валидна")
       } else {
          alert("Ваша карта не валидна")
       }
-})
+   })
 }

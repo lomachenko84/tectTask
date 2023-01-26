@@ -4,12 +4,12 @@ import { cardTip } from "../app";
 test("numberCard function", () => {
     let card_number = isValid("5469980270533124")
     let notCard = true
-    expect(card_number).toBo(notCard)
+    expect(card_number).toBe(notCard)
 })
 test("notNumber function", () => {
     let card_number = isValid("1234567890232132")
     let notCard = false
-    expect(card_number).toBo(notCard)
+    expect(card_number).toBe(notCard)
 })
 test("cardActiv function", () => {
     let newCard = cardTip("4")
@@ -20,12 +20,12 @@ test("cardActiv function", () => {
     let newCard5 = cardTip("305")
     let newCard6 = cardTip("2")
     let newCard7 = cardTip("323")
-    expect(newCard).toBo("1")
-    expect(newCard1).toBo("2")
-    expect(newCard2).toBo("3")
-    expect(newCard3).toBo("4")
-    expect(newCard4).toBo("5")
-    expect(newCard5).toBo("6")
-    expect(newCard6).toBo("7")
-    expect(newCard7).toBo("0")
+    expect(newCard).toBe("1")
+    expect(newCard1).toBe("2")
+    expect(newCard2).toBe("3")
+    expect(newCard3).toBe("4")
+    expect(newCard4).toBe("5")
+    expect(newCard5).toBe("6")
+    expect(newCard6).toBe("7")
+    expect(newCard7).toBe("0")
 })
